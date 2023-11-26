@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/icon.png" id="icon">
+    <link rel="stylesheet" href="style.css">
+    <title>PW</title>
+
+    <a href="index.html">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Anton&family=Gloock&family=Libre+Baskerville:wght@700&family=Lilita+One&display=swap');
+        </style>Home
+    </a>
+
+    <style>
+        body {
+            font-family: 'Barlow', sans-serif;
+            font-family: 'Corben', serif;
+            font-family: 'Roboto', sans-serif;
+            background-color: #EEE8AA;
+        }
+
+        .container {
+            color: #556B2F;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            justify-content: center;
+            text-align: center;
+            background-color: #BDB76B;
+            padding: 15px;
+            border-radius: 15px;
+            border: solid 8px #6B8E23;
+
+        }
+
+        h1 {
+            font-size: 45px;
+            padding: 5px;
+        }
+
+        p {
+            font-size: 21px;
+        }
+
+        input {
+            background: #EEE8AA;
+            width: 90%;
+            padding: 5px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border: solid 3px #6B8E23;
+            color: #6B8E23;
+        }
+
+        button {
+            cursor: pointer;
+            padding: 10px;
+            background-color: #6B8E23;
+            color: #EEE8AA;
+            font-weight: bolder;
+            font-size: 15px;
+            border: solid 3px #556B2F;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Exercicio 4</h1>
+        <p>Quilometragem percorrida (km):</p>
+        <input type="number" id="kilometers" placeholder="Quilometragem">
+        <p>Valor do combustivel por litro (R$/litro):</p>
+        <input type="number" id="fuelPrice" placeholder="Preço do Combustível">
+        <button onclick="calculateExpense()">Calcular Gasto</button>
+        <p>Gasto Total (R$):</p>
+        <div id="totalExpense"></div>
+    </div>
+    
+    <script>
+        function calculateExpense() {
+            var kilometers = parseFloat(document.getElementById("kilometers").value);
+            var fuelPrice = parseFloat(document.getElementById("fuelPrice").value);
+            var mileage = 8; // Veículo percorre 8 km por litro
+            
+            var totalExpense = (kilometers / mileage) * fuelPrice;
+            
+            document.getElementById("totalExpense").innerText = "R$ " + totalExpense.toFixed(2);
+        }
+    </script>
+</body>
+</html>
